@@ -1,0 +1,27 @@
+/* ============================================================
+   17) OFFER COUNTDOWN
+============================================================ */
+.offer{
+  background:
+    radial-gradient(circle at 85% 15%, rgba(233,180,76,.25), transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(180,85,45,.3), transparent 45%),
+    var(--terra-deep);
+  color:#fff;text-align:center;border-radius:var(--r-xl);
+  padding:clamp(2.2rem,6vw,4rem) 1.4rem;position:relative;overflow:hidden;
+}
+.offer::before{
+  content:"";position:absolute;inset:0;opacity:.12;pointer-events:none;
+  background-image:radial-gradient(#fff 1.2px, transparent 1.2px);background-size:22px 22px;
+}
+.offer h2{font-size:clamp(1.5rem,3.4vw,2.4rem);margin-block:.8rem}
+.offer__sub{opacity:.9;max-width:48ch;margin-inline:auto}
+.cd{display:flex;gap:.7rem;justify-content:center;margin-block:2rem;flex-wrap:wrap}
+.cd__cell{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:var(--r-md);min-width:78px;padding:.8rem .5rem;
+  backdrop-filter:blur(4px);
+}
+.cd__num{display:block;font-size:1.9rem;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.cd__lbl{font-size:.7rem;opacity:.85;font-weight:700}
+.offer .btn--cream:hover{background:var(--choco);color:#fff}
+

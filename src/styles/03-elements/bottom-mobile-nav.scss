@@ -1,0 +1,25 @@
+/* ============================================================
+   22) BOTTOM MOBILE NAV
+============================================================ */
+.bnav{
+  position:fixed;inset-inline:0;inset-block-end:0;z-index:940;
+  background:var(--choco);display:flex;justify-content:space-around;
+  padding-block:.5rem;padding-block-end:calc(.5rem + env(safe-area-inset-bottom));
+  box-shadow:0 -8px 30px rgba(36,18,7,.25);
+}
+.bnav button,.bnav a{
+  display:flex;flex-direction:column;align-items:center;gap:.2rem;
+  color:#D8C3A5;font-size:.62rem;font-weight:800;min-width:60px;padding:.2rem;
+  transition:color .2s,transform .2s;position:relative;
+}
+.bnav .is-active,.bnav button:hover{color:var(--butter);transform:translateY(-2px)}
+.bnav svg{width:21px;height:21px}
+.bnav .count{
+  position:absolute;inset-block-start:-2px;inset-inline-end:8px;
+  background:var(--terra);color:#fff;border-radius:999px;font-size:.58rem;
+  min-width:16px;height:16px;display:grid;place-items:center;padding-inline:3px;
+}
+.bnav .count:empty{display:none}
+@media(min-width:900px){.bnav{display:none}}
+@media(max-width:899.98px){body{padding-block-end:70px}}
+

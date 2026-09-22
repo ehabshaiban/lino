@@ -1,0 +1,13 @@
+/* ============================================================
+   24) UTILITIES / MOTION SAFETY
+============================================================ */
+[data-lz]{background:var(--bg-soft)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.is-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none}
+}
+salla-search:not(:defined),salla-login-modal:not(:defined),
+salla-localization-modal:not(:defined),salla-offer-modal:not(:defined){display:none}
+

@@ -1,0 +1,41 @@
+/* ============================================================
+   14) STORY
+============================================================ */
+.story{background:var(--bg-soft)}
+.story__grid{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:960px){.story__grid{grid-template-columns:1fr 1.1fr;gap:4rem}}
+.story__media{position:relative;width:min(440px,100%);justify-self:center}
+.story__img{border-radius:var(--r-xl);box-shadow:var(--shadow-lg);aspect-ratio:.92;object-fit:cover;width:100%}
+.story__frame{
+  position:absolute;inset:-14px;border:2px dashed var(--terra);border-radius:calc(var(--r-xl) + 10px);
+  inset-inline-start:-14px;opacity:.5;pointer-events:none;
+}
+.story__badge{
+  position:absolute;inset-block-end:-16px;inset-inline-end:-10px;
+  background:var(--terra);color:#fff;border-radius:var(--r-lg);
+  padding:.8rem 1.2rem;font-weight:800;font-size:.8rem;box-shadow:var(--shadow-md);
+  display:flex;gap:.5rem;align-items:center;
+}
+.story__list{display:grid;gap:.8rem;margin-block:1.5rem}
+.story__list li{display:flex;gap:.7rem;align-items:flex-start;font-weight:700}
+.story__list li svg{width:20px;height:20px;color:var(--leaf);flex:none;margin-block-start:.3rem}
+.story__list small{display:block;font-weight:400;color:var(--ink-soft)}
+.story__stats{display:flex;gap:2.2rem;flex-wrap:wrap;margin-block-start:1.8rem;padding-block-start:1.6rem;border-block-start:1px dashed var(--line)}
+.story__stats b{display:block;font-size:1.6rem;color:var(--terra);font-weight:800}
+.story__stats span{font-size:.8rem;color:var(--ink-soft);font-weight:700}
+
+/* ============================================================
+   15) TABS
+============================================================ */
+.tabs__bar{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-block-end:2rem}
+.tab-btn{
+  padding:.7rem 1.4rem;border-radius:999px;font-weight:800;font-size:.9rem;
+  border:1.5px solid var(--line);color:var(--ink-soft);background:var(--bg-card);
+  transition:all .25s var(--ease);
+}
+.tab-btn:hover{border-color:var(--terra);color:var(--terra)}
+.tab-btn.is-active{background:var(--choco);border-color:var(--choco);color:var(--cream-bright)}
+.tab-panel{display:none}
+.tab-panel.is-active{display:block;animation:linoFadeUp .5s var(--ease)}
+@keyframes linoFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+

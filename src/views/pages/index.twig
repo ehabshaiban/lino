@@ -1,0 +1,569 @@
+{% extends "layouts.master" %}
+
+{% block content %}
+{# COOKIES LINO home page extracted from supplied HTML. #}
+<a class="skip-link" href="#mainContent">تخطَّ إلى المحتوى</a>
+
+<!-- ================= SVG ICON SPRITE ================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.6-3.4 4.6-5 8-5s6.4 1.6 8 5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.3 4.8 13a4.7 4.7 0 0 1 0-6.7 4.6 4.6 0 0 1 6.6 0l.6.6.6-.6a4.6 4.6 0 0 1 6.6 0 4.7 4.7 0 0 1 0 6.7Z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m6-6-6 6 6 6"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 7h14M9 7V5h6v2m-8 0 1 13h8l1-13"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.5A8 8 0 1 1 10.5 4 6.5 6.5 0 0 0 20 13.5Z"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16v4H4zm1 4v7h14v-7M12 9v12m0-12s-1-4-4-4-2 4 0 4m4 0s1-4 4-4 2 4 0 4"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5s.8 2 .9 2.2c.1.2.1.4 0 .6-.1.2-.2.4-.4.6l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1 1.1-1.3.2-.4.5-.3.8-.2.3.1 2 1 2.3 1.2.4.2.6.2.7.4.1.1.1.7-.1 1.6Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s5 4.5 5 9.5a5 5 0 0 1-10 0c0-2 .8-3.7 2-5 .2 1.2.8 2 2 2.5C11 7.5 12 3 12 3Z"/></symbol>
+</svg>
+<!-- ================= ANNOUNCEMENT ================= -->
+<div class="annc" role="status">
+  <div class="annc__track" id="anncTrack">
+    <div class="annc__group">
+      <span><i>🚚</i> شحن مجاني للطلبات فوق 149 ر.س</span>
+      <span><i>🔥</i> مخبوز طازج كل صباح</span>
+      <span><i>🍫</i> شوكولاتة بلجيكية فاخرة 54%</span>
+      <span><i>🎁</i> تغليف هدايا مجاني للبوكسات</span>
+      <span><i>⭐</i> تقييم 4.9 من أكثر من 12,000 عميل</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-top">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+      <span class="header-top__msg">
+        <svg width="15" height="15"><use href="#i-truck"/></svg>
+        <span data-i18n="shipMsg">توصيل خلال 24 ساعة داخل المدينة</span>
+      </span>
+      <div class="ht-actions">
+        <button class="ht-btn" id="langToggle" type="button">
+          <span id="langLabel">EN</span>
+        </button>
+        <button class="ht-btn" type="button" data-action="currency">
+          <span data-i18n="currency">ريال سعودي</span>
+        </button>
+        <button class="ht-btn" type="button" data-action="contact">
+          <svg width="13" height="13"><use href="#i-phone"/></svg>
+          920-000-000
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container header-main">
+    <button class="icon-btn" id="menuOpen" aria-label="فتح القائمة" aria-controls="mobileMenu">
+      <svg><use href="#i-menu"/></svg>
+    </button>
+
+    <a class="brand" href="#top" aria-label="كوكيز لينو — الرئيسية">
+      <!-- LOGO: قابل للاستبدال من LINO_ASSETS.logo -->
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="29" fill="#B4552D"/>
+        <circle cx="32" cy="32" r="29" fill="none" stroke="#3B2314" stroke-width="3"/>
+        <circle cx="22" cy="24" r="4" fill="#3B2314"/>
+        <circle cx="40" cy="20" r="3.4" fill="#3B2314"/>
+        <circle cx="44" cy="36" r="4.4" fill="#3B2314"/>
+        <circle cx="28" cy="42" r="3.6" fill="#3B2314"/>
+        <circle cx="17" cy="36" r="2.6" fill="#3B2314"/>
+        <path d="M46 47c3-2 5-4 6-6" stroke="#F2E4C8" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="brand__name">
+        <b data-i18n="brandName">كوكيز لينو</b>
+        <span class="latin-logo">COOKIES LINO</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="التنقل الرئيسي">
+      <ul>
+        <li><a href="#top" data-i18n="navHome">الرئيسية</a></li>
+        <li class="nav-item">
+          <button class="nav-parent" type="button">
+            <span data-i18n="navCookies">الكوكيز</span>
+            <svg class="nav-caret"><use href="#i-arrow"/></svg>
+          </button>
+          <div class="nav-drop">
+            <a href="#categories">كوكيز كلاسيك <small>الوصفة الأصلية</small></a>
+            <a href="#categories">دبل شوكولاتة <small>لعشاق الكاكاو</small></a>
+            <a href="#categories">كوكيز محشي <small>نوتيلا ولوتس</small></a>
+            <a href="#categories">صحي وشوفان <small>بدون سكر مضاف</small></a>
+          </div>
+        </li>
+        <li><a href="#gifts" data-i18n="navGifts">بوكسات وهدايا</a></li>
+        <li><a href="#offer" data-i18n="navOffers">العروض</a></li>
+        <li><a href="#story" data-i18n="navStory">قصتنا</a></li>
+        <li><a href="#faq" data-i18n="navFaq">الأسئلة الشائعة</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-action="search" aria-label="بحث">
+        <svg><use href="#i-search"/></svg>
+      </button>
+      <button class="icon-btn" type="button" data-action="wishlist" aria-label="المفضلة">
+        <svg><use href="#i-heart"/></svg>
+        <span class="count" id="wishCount"></span>
+      </button>
+      <button class="icon-btn" type="button" data-action="account" aria-label="الحساب">
+        <svg><use href="#i-user"/></svg>
+      </button>
+      <button class="icon-btn" type="button" id="themeToggle" aria-label="تبديل الوضع الليلي">
+        <svg class="ic-sun"><use href="#i-sun"/></svg>
+      </button>
+      <button class="icon-btn" type="button" data-action="cart" aria-label="السلة">
+        <svg><use href="#i-bag"/></svg>
+        <span class="count" id="cartCount"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div class="scrim" id="menuScrim"></div>
+<aside class="m-menu" id="mobileMenu" aria-label="قائمة الجوال">
+  <div class="m-menu__head">
+    <span class="brand__name"><b>كوكيز لينو</b><span class="latin-logo" style="letter-spacing:.3em">COOKIES LINO</span></span>
+    <button class="icon-btn" id="menuClose" aria-label="إغلاق القائمة"><svg><use href="#i-x"/></svg></button>
+  </div>
+  <div class="m-menu__body">
+    <a class="m-link" href="#top" data-close-menu data-i18n="navHome">الرئيسية</a>
+    <button class="m-link" type="button" data-msub-toggle="subCookies">
+      <span data-i18n="navCookies">الكوكيز</span>
+      <svg class="nav-caret" width="16" height="16"><use href="#i-arrow"/></svg>
+    </button>
+    <div class="m-sub" id="subCookies">
+      <a href="#categories" data-close-menu>كوكيز كلاسيك</a>
+      <a href="#categories" data-close-menu>دبل شوكولاتة</a>
+      <a href="#categories" data-close-menu>كوكيز محشي</a>
+      <a href="#categories" data-close-menu>صحي وشوفان</a>
+    </div>
+    <a class="m-link" href="#gifts" data-close-menu data-i18n="navGifts">بوكسات وهدايا</a>
+    <a class="m-link" href="#offer" data-close-menu data-i18n="navOffers">العروض</a>
+    <a class="m-link" href="#collection" data-close-menu>كولكشن لينو</a>
+    <a class="m-link" href="#story" data-close-menu data-i18n="navStory">قصتنا</a>
+    <a class="m-link" href="#faq" data-close-menu data-i18n="navFaq">الأسئلة الشائعة</a>
+    <a class="m-link" href="#footer" data-close-menu>تواصل معنا</a>
+  </div>
+  <div class="m-menu__foot">
+    <button class="btn btn--primary btn--block" type="button" data-action="cart" data-close-menu>
+      <svg><use href="#i-bag"/></svg> <span data-i18n="openCart">افتح السلة</span>
+    </button>
+    <button class="btn btn--ghost btn--block" type="button" data-action="account">
+      <svg><use href="#i-user"/></svg> <span data-i18n="login">تسجيل الدخول</span>
+    </button>
+  </div>
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main id="mainContent">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container hero__grid">
+      <div class="hero__copy reveal">
+        <span class="chip chip--terra hero__kicker" data-i18n="heroChip">🍪 مخبوز طازج يوميًا</span>
+        <h1 class="hero__title" data-i18n-html="heroTitle">كوكيز حرفي فاخر،<br>بشوكولاتة <em>حقيقية</em></h1>
+        <p class="hero__lead" data-i18n="heroLead">
+          في كوكيز لينو نخبز كل قطعة يدويًا كل صباح: زبدة فرنسية، شوكولاتة بلجيكية 54%،
+          ووصفات صقلناها على مدى سنوات — لتصل إليك دافئة، طرية، ولا تُنسى.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#bestSellers">
+            <span data-i18n="heroCta1">تسوّق الآن</span>
+            <svg><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#gifts" data-i18n="heroCta2">اكتشف البوكسات</a>
+        </div>
+        <div class="hero__trust">
+          <span class="hero__stars" aria-hidden="true">★★★★★</span>
+          <small data-i18n="heroTrust">4.9 من 5 — أكثر من 12,000 عميل سعيد</small>
+        </div>
+      </div>
+
+      <div class="hero__media reveal">
+        <img class="hero__img" data-lz alt="كوكيز شوكولاتة طازج من كوكيز لينو" width="900" height="780">
+        <div class="hero__float" aria-hidden="true">
+          <img data-lz alt="">
+          <div>
+            <b>دبل شوكولاتة</b>
+            <small>45 ر.س</small>
+          </div>
+        </div>
+        <div class="hero__stamp" aria-hidden="true">مخبوز<br>اليوم<br>7:00 ص</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES MARQUEE -->
+  <div class="values" aria-hidden="true">
+    <div class="annc__track" id="valuesTrack">
+      <div class="annc__group">
+        <span><i>✦</i> زبدة فرنسية طبيعية</span>
+        <span><i>✦</i> بدون مواد حافظة</span>
+        <span><i>✦</i> خَبز يومي</span>
+        <span><i>✦</i> شوكولاتة بلجيكية</span>
+        <span><i>✦</i> تغليف هدايا فاخر</span>
+        <span><i>✦</i> توصيل مبرّد</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="container">
+      <header class="section-head section-head--center reveal">
+        <span class="t-kicker" data-i18n="catKicker">الأقسام</span>
+        <h2 class="t-section" data-i18n="catTitle">اختر مذاقك المفضل</h2>
+        <p class="section-sub" data-i18n="catSub">من الكلاسيك الذهبي إلى المحشي الفاخر — لكل مزاج كوكيز خاص به.</p>
+      </header>
+      <div class="cats reveal" id="catsGrid"><!-- تُبنى بواسطة LINO --></div>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section class="section" id="bestSellers" style="padding-block-start:0">
+    <div class="container">
+      <header class="section-head reveal" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem">
+        <div>
+          <span class="t-kicker" data-i18n="bestKicker">الأكثر مبيعًا</span>
+          <h2 class="t-section" data-i18n="bestTitle">يعشقها الجميع</h2>
+        </div>
+        <div class="lslider__nav">
+          <button class="lslider__btn" type="button" data-slide="prev" data-target="bestSlider" aria-label="السابق">
+            <svg style="transform:scaleX(-1)"><use href="#i-arrow"/></svg>
+          </button>
+          <button class="lslider__btn" type="button" data-slide="next" data-target="bestSlider" aria-label="التالي">
+            <svg><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </header>
+      <div class="lslider reveal">
+        <div class="lslider__viewport" id="bestSlider"><!-- تُبنى بواسطة LINO --></div>
+      </div>
+      <!-- تكامل سلة: في بيئة الإنتاج استبدل الشبكة أعلاه بـ:
+           <salla-products-slider source="best_selling" limit="8" includes='["images","options"]'></salla-products-slider> -->
+    </div>
+  </section>
+
+  <!-- EDITORIAL COLLECTION -->
+  <section class="section" id="collection" style="padding-block-start:0">
+    <div class="container">
+      <header class="section-head section-head--center reveal">
+        <span class="t-kicker" data-i18n="collKicker">كولكشن لينو</span>
+        <h2 class="t-section" data-i18n="collTitle">قِطع تستحق التجربة</h2>
+        <p class="section-sub" data-i18n="collSub">تنسيقات مختارة بعناية من مخبزنا — تصفحها كما تتصفح مجلة.</p>
+      </header>
+      <div class="coll reveal" id="collGrid"><!-- تُبنى بواسطة LINO --></div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section story" id="story">
+    <div class="container story__grid">
+      <div class="story__media reveal">
+        <span class="story__frame" aria-hidden="true"></span>
+        <img class="story__img" data-lz alt="خبز الكوكيز في مخبز كوكيز لينو" width="700" height="650">
+        <div class="story__badge"><svg width="18" height="18"><use href="#i-fire"/></svg> يُخبز أمامك يوميًا</div>
+      </div>
+      <div class="story__copy reveal">
+        <span class="t-kicker" data-i18n="storyKicker">قصتنا</span>
+        <h2 class="t-section" style="margin-block:.7rem" data-i18n="storyTitle">من فرننا إلى طاولتك</h2>
+        <p class="section-sub" data-i18n="storyText">
+          بدأت حكاية لينو من مطبخ صغير وشغف كبير. اليوم نخبز آلاف القطع يوميًا بنفس الوصفة الأولى:
+          مكونات صادقة، يدٌ صبورة، ولا اختصارات — أبدًا.
+        </p>
+        <ul class="story__list">
+          <li><svg><use href="#i-check"/></svg><span>زبدة فرنسية طبيعية 100%<small>بدون زيوت مهدرجة أو سمن صناعي</small></span></li>
+          <li><svg><use href="#i-check"/></svg><span>شوكولاتة بلجيكية فاخرة 54% كاكاو<small>قطع حقيقية تذوب في كل قضمة</small></span></li>
+          <li><svg><use href="#i-check"/></svg><span>بدون مواد حافظة أو نكهات صناعية<small>صلاحيتنا قصيرة لأن مكوناتنا حقيقية</small></span></li>
+          <li><svg><use href="#i-check"/></svg><span>خَبز يومي على دفعات صغيرة<small>لن يصلك إلا كوكيز اليوم — دائمًا</small></span></li>
+        </ul>
+        <div class="story__stats">
+          <div><b>+15</b><span data-i18n="stat1">سنة خبرة في الخَبز</span></div>
+          <div><b>40K</b><span data-i18n="stat2">كوكيز نخبزها شهريًا</span></div>
+          <div><b>4.9★</b><span data-i18n="stat3">متوسط تقييم عملائنا</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT TABS -->
+  <section class="section" id="shop">
+    <div class="container">
+      <header class="section-head section-head--center reveal">
+        <span class="t-kicker" data-i18n="shopKicker">المتجر</span>
+        <h2 class="t-section" data-i18n="shopTitle">تسوّق حسب ذوقك</h2>
+      </header>
+      <div class="tabs reveal">
+        <div class="tabs__bar" role="tablist" aria-label="أقسام المنتجات">
+          <button class="tab-btn is-active" role="tab" aria-selected="true" data-tab="all" data-i18n="tabAll">الكل</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="new" data-i18n="tabNew">وصل حديثًا</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="best" data-i18n="tabBest">الأكثر مبيعًا</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="sale" data-i18n="tabSale">عروض</button>
+        </div>
+        <div class="tab-panel is-active" data-panel="all"><div class="p-grid" data-grid="all"></div></div>
+        <div class="tab-panel" data-panel="new"><div class="p-grid" data-grid="new"></div></div>
+        <div class="tab-panel" data-panel="best"><div class="p-grid" data-grid="best"></div></div>
+        <div class="tab-panel" data-panel="sale"><div class="p-grid" data-grid="sale"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFT BOXES -->
+  <section class="section gifts" id="gifts">
+    <div class="container">
+      <header class="section-head section-head--center reveal">
+        <span class="t-kicker" data-i18n="giftKicker">بوكسات وهدايا</span>
+        <h2 class="t-section" data-i18n="giftTitle">أهدِ لحظة حلوة</h2>
+        <p class="section-sub" data-i18n="giftSub">بوكسات مصممة للمناسبات والشركات، بتغليف فاخر وبطاقة إهداء مجانية.</p>
+      </header>
+      <div class="gift-grid reveal" id="giftGrid"><!-- تُبنى بواسطة LINO --></div>
+      <div class="gifts__cta reveal">
+        <p data-i18n="giftCtaTitle">تحتاج بوكس مخصص للشركات أو المناسبات؟<small>نصمم لك بوكس بهويتك الخاصة خلال 48 ساعة.</small></p>
+        <a class="btn btn--cream" href="https://wa.me/966500000000" target="_blank" rel="noopener">
+          <svg><use href="#i-wa"/></svg> <span data-i18n="giftCtaBtn">تواصل عبر واتساب</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER COUNTDOWN -->
+  <section class="section" id="offer">
+    <div class="container">
+      <div class="offer reveal">
+        <span class="chip chip--cream" style="background:rgba(255,255,255,.15);color:#fff" data-i18n="offerChip">عرض نهاية الأسبوع</span>
+        <h2 data-i18n="offerTitle">خصم 20% على جميع البوكسات</h2>
+        <p class="offer__sub" data-i18n="offerSub">العرض ساري حتى نفاد الكمية — استخدم كود <b>LINO20</b> عند إتمام الطلب.</p>
+        <div class="cd" id="countdown" role="timer" aria-live="polite">
+          <div class="cd__cell"><span class="cd__num" data-cd="d">00</span><span class="cd__lbl" data-i18n="days">يوم</span></div>
+          <div class="cd__cell"><span class="cd__num" data-cd="h">00</span><span class="cd__lbl" data-i18n="hours">ساعة</span></div>
+          <div class="cd__cell"><span class="cd__num" data-cd="m">00</span><span class="cd__lbl" data-i18n="mins">دقيقة</span></div>
+          <div class="cd__cell"><span class="cd__num" data-cd="s">00</span><span class="cd__lbl" data-i18n="secs">ثانية</span></div>
+        </div>
+        <a class="btn btn--cream" href="#gifts" data-i18n="offerCta">اطلب بوكسك الآن</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews" style="padding-block-start:0">
+    <div class="container">
+      <header class="section-head reveal" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem">
+        <div>
+          <span class="t-kicker" data-i18n="revKicker">آراء العملاء</span>
+          <h2 class="t-section" data-i18n="revTitle">قالوا عن لينو</h2>
+        </div>
+        <div class="lslider__nav">
+          <button class="lslider__btn" type="button" data-slide="prev" data-target="revSlider" aria-label="السابق">
+            <svg style="transform:scaleX(-1)"><use href="#i-arrow"/></svg>
+          </button>
+          <button class="lslider__btn" type="button" data-slide="next" data-target="revSlider" aria-label="التالي">
+            <svg><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </header>
+      <div class="lslider reveal">
+        <div class="lslider__viewport" id="revSlider" style="align-items:stretch"><!-- تُبنى بواسطة LINO --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="section" id="social" style="padding-block-start:0">
+    <div class="container">
+      <header class="section-head section-head--center reveal">
+        <span class="t-kicker" data-i18n="igKicker">تابعنا</span>
+        <h2 class="t-section" data-i18n="igTitle">@cookies.lino</h2>
+        <p class="section-sub" data-i18n="igSub">شاركنا لحظتك الحلوة بوسم #كوكيز_لينو لتظهر هنا.</p>
+      </header>
+      <div class="ig-grid reveal" id="igGrid"><!-- تُبنى بواسطة LINO --></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="padding-block-start:0">
+    <div class="container">
+      <header class="section-head section-head--center reveal">
+        <span class="t-kicker" data-i18n="faqKicker">مساعدة</span>
+        <h2 class="t-section" data-i18n="faqTitle">لديك سؤال؟ الإجابة هنا 👇</h2>
+      </header>
+      <div class="faq reveal" id="faqList"><!-- تُبنى بواسطة LINO --></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section nl" id="newsletter">
+    <div class="container">
+      <div class="nl__inner reveal">
+        <div>
+          <h2 data-i18n="nlTitle">اشترك واحصل على خصم 10% لطلبك الأول 🎁</h2>
+          <p data-i18n="nlSub">عروض حصرية، ونكهات جديدة قبل الجميع — بدون إزعاج، وعد.</p>
+        </div>
+        <form class="nl__form" id="nlForm" novalidate>
+          <label class="sr-only" for="nlEmail" data-i18n="nlLabel">البريد الإلكتروني</label>
+          <input class="nl__input" type="email" id="nlEmail" required autocomplete="email"
+                 data-i18n-ph="nlPh" placeholder="بريدك الإلكتروني">
+          <button class="btn btn--primary" type="submit" data-i18n="nlBtn">اشترك الآن</button>
+          <p class="nl__msg" id="nlMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <span class="brand__name" style="color:#fff"><b style="font-size:1.3rem">كوكيز لينو</b><span class="latin-logo" style="color:var(--butter)">COOKIES LINO</span></span>
+        <p>مخبز حرفي متخصص بالكوكيز الفاخر. نخبز يوميًا بمكونات حقيقية، ونوصل الفرح إلى بابك.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="https://wa.me/966500000000" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+          <a href="#" aria-label="X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="fLinks">روابط سريعة</h3>
+        <ul>
+          <li><a href="#shop" data-i18n="navShop">المتجر</a></li>
+          <li><a href="#gifts" data-i18n="navGifts">بوكسات وهدايا</a></li>
+          <li><a href="#offer" data-i18n="navOffers">العروض</a></li>
+          <li><a href="#story" data-i18n="navStory">قصتنا</a></li>
+          <li><a href="#faq" data-i18n="navFaq">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="fCats">الأقسام</h3>
+        <ul id="footerCats"><!-- تُبنى بواسطة LINO --></ul>
+      </div>
+      <div class="footer-col">
+        <h3 data-i18n="fContact">تواصل معنا</h3>
+        <ul class="footer-contact">
+          <li><svg><use href="#i-pin"/></svg><span>الرياض — حي الملقا، شارع أنس بن مالك</span></li>
+          <li><svg><use href="#i-phone"/></svg><a href="tel:920000000">920-000-000</a></li>
+          <li><svg><use href="#i-mail"/></svg><a href="mailto:hello@cookieslino.com">hello@cookieslino.com</a></li>
+          <li><svg><use href="#i-truck"/></svg><span data-i18n="fHours">السبت–الخميس: 8 ص – 11 م</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 كوكيز لينو — جميع الحقوق محفوظة</span>
+      <div class="pay-badges" aria-label="وسائل الدفع">
+        <span class="pay-badge">مدى</span>
+        <span class="pay-badge">VISA</span>
+        <span class="pay-badge">Mastercard</span>
+        <span class="pay-badge">Apple Pay</span>
+        <span class="pay-badge">تمارا</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= BOTTOM NAV (MOBILE) ================= -->
+<nav class="bnav" aria-label="تنقل الجوال السفلي">
+  <a href="#top" class="is-active"><svg><use href="#i-menu"/></svg><span data-i18n="bHome">الرئيسية</span></a>
+  <button type="button" id="bnavCats"><svg><use href="#i-search"/></svg><span data-i18n="bCats">الأقسام</span></button>
+  <button type="button" data-action="wishlist">
+    <svg><use href="#i-heart"/></svg><span data-i18n="bWish">المفضلة</span>
+    <span class="count" data-wish-count></span>
+  </button>
+  <button type="button" data-action="cart">
+    <svg><use href="#i-bag"/></svg><span data-i18n="bCart">السلة</span>
+    <span class="count" data-cart-count></span>
+  </button>
+  <button type="button" data-action="account"><svg><use href="#i-user"/></svg><span data-i18n="bMe">حسابي</span></button>
+</nav>
+
+<!-- ================= CART DRAWER ================= -->
+<div class="scrim" id="cartScrim"></div>
+<aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="سلة التسوق">
+  <div class="drawer__head">
+    <h2><svg width="20" height="20"><use href="#i-bag"/></svg> <span data-i18n="cartTitle">سلة التسوق</span> <span class="chip" id="cartHeadCount"></span></h2>
+    <button class="icon-btn" type="button" data-close-cart aria-label="إغلاق السلة"><svg><use href="#i-x"/></svg></button>
+  </div>
+  <div class="drawer__body" id="cartBody"></div>
+  <div class="drawer__foot" id="cartFoot">
+    <div class="cart-sum"><span data-i18n="subtotal">مجموع المنتجات</span><b id="cartSubtotal"></b></div>
+    <div class="cart-sum cart-sum--total"><span data-i18n="total">الإجمالي (شامل الضريبة)</span><b id="cartTotal" style="color:var(--terra)"></b></div>
+    <button class="btn btn--primary btn--block" type="button" id="checkoutBtn" data-i18n="checkout">إتمام الطلب</button>
+    <button class="btn btn--ghost btn--block btn--sm" type="button" data-close-cart data-i18n="contShop">متابعة التسوق</button>
+    <p class="cart-note" data-i18n="shipNote">🚚 شحن مجاني للطلبات فوق 149 ر.س</p>
+  </div>
+</aside>
+
+<!-- ================= QUICK VIEW MODAL ================= -->
+<div class="modal-scrim" id="qvScrim">
+  <div class="qv" role="dialog" aria-modal="true" aria-label="عرض سريع للمنتج">
+    <div class="qv__grid">
+      <div class="qv__media"><img id="qvImg" alt=""></div>
+      <div class="qv__body">
+        <button class="qv__close" type="button" id="qvClose" aria-label="إغلاق"><svg><use href="#i-x"/></svg></button>
+        <span class="chip chip--line" id="qvCat"></span>
+        <h3 class="t-section" id="qvName" style="font-size:1.4rem"></h3>
+        <div class="pcard__rate"><span class="stars" id="qvStars"></span><span id="qvRate"></span></div>
+        <div class="qv__price"><b id="qvPrice"></b><s id="qvOld"></s><span class="chip chip--terra" id="qvOff"></span></div>
+        <p class="qv__desc" id="qvDesc"></p>
+        <div class="qv__row">
+          <div class="qv__qty">
+            <button type="button" id="qvMinus" aria-label="تقليل الكمية"><svg width="14" height="14"><use href="#i-minus"/></svg></button>
+            <span id="qvQty">1</span>
+            <button type="button" id="qvPlus" aria-label="زيادة الكمية"><svg width="14" height="14"><use href="#i-plus"/></svg></button>
+          </div>
+          <button class="btn btn--primary" type="button" id="qvAdd" style="flex:1">
+            <svg><use href="#i-bag"/></svg> <span data-i18n="addToCart">أضف إلى السلة</span>
+          </button>
+        </div>
+        <div class="qv__meta">
+          <span><svg><use href="#i-check"/></svg> <span data-i18n="fresh">مخبوز اليوم</span></span>
+          <span><svg><use href="#i-check"/></svg> <span data-i18n="ship24">توصيل خلال 24 ساعة</span></span>
+          <span><svg><use href="#i-gift"/></svg> <span data-i18n="giftable">قابل للإهداء</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SEARCH OVERLAY ================= -->
+<div class="search-ov" id="searchOv" role="dialog" aria-modal="true" aria-label="البحث">
+  <div class="search-ov__head">
+    <svg width="24" height="24" style="color:var(--terra)"><use href="#i-search"/></svg>
+    <input class="search-ov__input" id="searchInput" type="search" data-i18n-ph="searchPh" placeholder="ابحث عن كوكيز، بوكس، نكهة…" autocomplete="off">
+    <button class="icon-btn" type="button" id="searchClose" aria-label="إغلاق البحث"><svg><use href="#i-x"/></svg></button>
+  </div>
+  <div class="search-ov__body">
+    <p class="t-caption" id="searchHint" data-i18n="searchHint">جرّب: “شوكولاتة”، “محشي”، “بوكس”…</p>
+    <div id="searchResults"></div>
+  </div>
+</div>
+<!-- تكامل سلة: داخل المنصة يتم تفعيل <salla-search> تلقائيًا بدل هذا الغلاف -->
+<salla-search></salla-search>
+<salla-login-modal></salla-login-modal>
+<salla-localization-modal></salla-localization-modal>
+
+<!-- ================= FLOATING ACTIONS ================= -->
+<div class="fab-col">
+  <a class="fab fab--wa" href="https://wa.me/966500000000" target="_blank" rel="noopener" aria-label="واتساب"><svg><use href="#i-wa"/></svg></a>
+  <button class="fab fab--top" id="fabTop" type="button" aria-label="العودة للأعلى">
+    <svg style="transform:rotate(90deg)"><use href="#i-arrow"/></svg>
+  </button>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+{% endblock %}

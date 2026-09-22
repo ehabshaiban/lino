@@ -1,0 +1,12 @@
+/* ============================================================
+   5) ANNOUNCEMENT MARQUEE
+============================================================ */
+.annc{background:var(--choco);color:var(--cream);overflow:hidden;font-size:.82rem;font-weight:700}
+.annc__track{display:flex;width:max-content;animation:linoMarquee 28s linear infinite}
+.annc__group{display:flex;align-items:center;gap:2.6rem;padding:.55rem 1.3rem;white-space:nowrap}
+.annc__group span{display:inline-flex;align-items:center;gap:.55rem}
+.annc__group i{font-style:normal;color:var(--butter)}
+@keyframes linoMarquee{to{transform:translateX(50%)}}
+[dir="ltr"] .annc__track{animation-name:linoMarqueeLtr}
+@keyframes linoMarqueeLtr{to{transform:translateX(-50%)}}
+

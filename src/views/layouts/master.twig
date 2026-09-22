@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كوكيز لينو | COOKIES LINO — كوكيز فاخر مخبوز يوميًا</title>
+<meta name="description" content="كوكيز لينو — كوكيز حرفي فاخر بشوكولاتة حقيقية، مخبوز يوميًا. بوكسات هدايا، كوكيز محشي، وكلاسيكيات لا تُقاوم.">
+
+<!--
+  ============================================================
+  COOKIES LINO — Premium Cookie Boutique Theme (Salla-Ready)
+  ============================================================
+  ملاحظات النشر داخل منصة سلة:
+  1) عناصر <salla-*> المضمّنة تُروى تلقائيًا داخل بيئة سلة
+     (السلة، البحث، الدخول، تعريب العملة/اللغة).
+  2) في الإنتاج: استبدل مصفوفة LINO_PRODUCTS بمخرجات Twig
+     الخاصة بالمنتجات، وروابط LINO_ASSETS بروابط CDN سلة.
+  3) كل الصور مركزية في كائن LINO_ASSETS أعلى السكربت.
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="{{ 'app.css' | asset }}">
+</head>
+<body>
+{% block content %}{% endblock %}
+<script defer src="{{ 'app.js' | asset }}"></script>
+</body>
+</html>

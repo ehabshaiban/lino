@@ -1,0 +1,57 @@
+/* ============================================================
+   1) DESIGN TOKENS — COOKIES LINO
+============================================================ */
+:root{
+  /* Brand palette */
+  --choco:        #3B2314;
+  --choco-deep:   #241207;
+  --choco-soft:   #6B4A32;
+  --cream:        #F2E4C8;
+  --cream-bright: #FBF5E8;
+  --paper:        #FFFDF8;
+  --terra:        #B4552D;
+  --terra-deep:   #8F3E1D;
+  --butter:       #E9B44C;
+  --leaf:         #5F7A4E;
+  --danger:       #C0392B;
+
+  /* Semantic */
+  --bg:        var(--paper);
+  --bg-soft:   var(--cream-bright);
+  --bg-card:   #FFFFFF;
+  --ink:       var(--choco);
+  --ink-soft:  #7A6248;
+  --line:      #EADFC8;
+  --accent:    var(--terra);
+
+  /* Type */
+  --font-ar: 'Almarai', system-ui, sans-serif;
+  --font-en: 'Playfair Display', serif;
+
+  /* Shape & depth */
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px;
+  --arch: 46% 46% 18px 18px / 38% 38% 18px 18px;
+  --shadow-sm: 0 2px 10px rgba(59,35,20,.06);
+  --shadow-md: 0 10px 30px rgba(59,35,20,.10);
+  --shadow-lg: 0 24px 60px rgba(59,35,20,.16);
+
+  /* Layout */
+  --container: 1240px;
+  --header-h: 76px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+[data-theme="dark"]{
+  --bg:        #191009;
+  --bg-soft:   #211509;
+  --bg-card:   #241811;
+  --ink:       #F5E9D2;
+  --ink-soft:  #C8B190;
+  --line:      #3B2A1B;
+  --cream:     #2C1D10;
+  --cream-bright:#221609;
+  --shadow-sm: 0 2px 10px rgba(0,0,0,.35);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.45);
+  --shadow-lg: 0 24px 60px rgba(0,0,0,.55);
+}
+

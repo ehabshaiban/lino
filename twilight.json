@@ -1,0 +1,14 @@
+{
+  "name": {
+    "ar": "كوكيز لينو",
+    "en": "COOKIES LINO"
+  },
+  "features": [
+    "fonts",
+    "color",
+    "breadcrumb",
+    "filters"
+  ],
+  "settings": [],
+  "components": []
+}
